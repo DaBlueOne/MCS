@@ -12,6 +12,7 @@ public class MCS extends JavaPlugin
 {
 
     public static FileLogger FILEL;
+    public static boolean DEBUG;
 
     @Override
     public void onEnable()
@@ -19,6 +20,9 @@ public class MCS extends JavaPlugin
 
         FILEL = new FileLogger(this);
         registerEvents();
+
+        DEBUG = true;
+
     }
 
     @Override

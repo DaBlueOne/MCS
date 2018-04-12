@@ -18,7 +18,12 @@ public class FileLogger
     {
 
         _pl = pl;
-
+       /* if (MCS.DEBUG)
+        {
+            String date = DateTimeFormatter.ofPattern("MM-dd-yy").format(LocalDateTime.now());
+            System.out.println(_pl.getDataFolder().getAbsolutePath() + "\\" + date + "chat" + ".txt");
+        } else
+         */
         makeNewFile("login");
         makeNewFile("chat");
 
@@ -27,7 +32,7 @@ public class FileLogger
     public File makeNewFile(String type)
     {
 
-        String date = DateTimeFormatter.ofPattern("HH:mm:ss").format(LocalDateTime.now());
+        String date = DateTimeFormatter.ofPattern("MM-dd-yy").format(LocalDateTime.now());
 
         File file = new File(_pl.getDataFolder().getAbsolutePath() + "\\" + date + type + ".txt");
         if (!file.exists())
@@ -53,7 +58,7 @@ public class FileLogger
     {
         try
         {
-            String date = DateTimeFormatter.ofPattern("HH:mm:ss").format(LocalDateTime.now());
+            String date = DateTimeFormatter.ofPattern("MM-dd-yy").format(LocalDateTime.now());
             BufferedWriter bw = new BufferedWriter(new FileWriter(_pl.getDataFolder().getAbsolutePath() + "\\" + date + type + ".txt", true));
 
             bw.write(data);
