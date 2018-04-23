@@ -6,3 +6,5 @@ commands:
     description: Changes GameMode to Creative.
   survival:
     description: Changes GameMode to Survival.
+  smite:
+    description: Changes player GameMode to survival and smites that specific player.
