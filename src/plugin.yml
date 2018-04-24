@@ -8,3 +8,7 @@ commands:
     description: Changes GameMode to Survival.
   smite:
     description: Changes player GameMode to survival and smites that specific player.
+  day:
+    description: Changes world time to day.
+  night:
+    description: Changes world time to night.

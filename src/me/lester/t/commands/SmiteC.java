@@ -8,6 +8,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.Collection;
+
 public class SmiteC implements CommandExecutor
 {
     @Override
@@ -16,6 +18,16 @@ public class SmiteC implements CommandExecutor
         Player pl = (Player) sender;
         if (cmdLabel.equalsIgnoreCase("smite") && args.length == 1)
         {
+
+            Collection<? extends Player> pls = Bukkit.getOnlinePlayers();
+
+            if (!pls.contains(Bukkit.getPlayer(args[0])))
+            {
+                pl.sendMessage(ChatColor.RED + "[" + ChatColor.YELLOW + "Smite" + ChatColor.RED + "] " + ChatColor.GOLD + "Player is not online.");
+
+                return true;
+            }
+
             Player pl2 = Bukkit.getPlayer(args[0]);
 
             pl.sendMessage(ChatColor.RED + "[" + ChatColor.YELLOW + "Smite" + ChatColor.RED + "] " + ChatColor.GOLD + "Smiting player " + ChatColor.GREEN + args[0] + ChatColor.GOLD + ".");
