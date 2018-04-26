@@ -1,9 +1,6 @@
 package me.lester.t;
 
-import me.lester.t.commands.SGMC;
-import me.lester.t.commands.SGMS;
-import me.lester.t.commands.SmiteC;
-import me.lester.t.commands.TimeC;
+import me.lester.t.commands.*;
 import me.lester.t.events.ChatEvent;
 import me.lester.t.events.LogEvents;
 import me.lester.t.events.MOTDEvent;
@@ -44,6 +41,7 @@ public class MCS extends JavaPlugin
         this.getCommand("smite").setExecutor(new SmiteC());
         this.getCommand("day").setExecutor(new TimeC());
         this.getCommand("night").setExecutor(new TimeC());
+        this.getCommand("server").setExecutor(new ServerC());
     }
 
     private void RegisterEvents()

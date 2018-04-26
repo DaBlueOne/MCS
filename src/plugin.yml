@@ -12,3 +12,5 @@ commands:
     description: Changes world time to day.
   night:
     description: Changes world time to night.
+  server:
+    description: The main server command
