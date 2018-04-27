@@ -2,6 +2,7 @@ package me.lester.t;
 
 import me.lester.t.commands.*;
 import me.lester.t.events.ChatEvent;
+import me.lester.t.events.DeathEvent;
 import me.lester.t.events.LogEvents;
 import me.lester.t.events.MOTDEvent;
 import me.lester.t.utils.FileLogger;
@@ -53,5 +54,6 @@ public class MCS extends JavaPlugin
         pm.registerEvents(new LogEvents(), this);
         pm.registerEvents(new MOTDEvent(), this);
         pm.registerEvents(new ChatEvent(), this);
+        pm.registerEvents(new DeathEvent(), this);
     }
 }
